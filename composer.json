@@ -1,0 +1,22 @@
+{
+    "name": "neondigital/forma",
+    "description": "A nice way to play with forms in Laravel 4.",
+    "keywords": ["laravel", "forms", "html", "builder"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Neon Digital",
+            "email": "glenn@neondigital.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Forma": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
