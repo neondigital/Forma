@@ -31,7 +31,7 @@ class BaseTag implements TagInterface
         $tagString .= "<".$this->tagName;
 
         // Determine value??
-        if ($this->hasValue and !isset($this->attributes['value']) and isset($this->attributes['name']))
+        if ($this->hasValue and isset($this->attributes['name']))
         {
             // Try this request first
             if (Input::get($this->attributes['name']))

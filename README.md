@@ -76,6 +76,10 @@ Forma::select('town', array('1' => 'Chelmsford', '2' => 'Brentwood', '3' => 'Col
 
 Forma::checkbox('cake',1);
 
+Forma::button('Click me!!', 'submit')->class('btn btn-primary');
+
+Forma::submit('submit_btn','Save Changes');
+
 Forma::close();
 
 ```
