@@ -3,13 +3,28 @@ Forma
 
 A nice way to play with forms in Laravel 4.
 
+Clever Features
+---------------
+
+1. Auto-repopulation from Input::get() or Input::old() if value not provided
+2. Auto-labels either prepended or wrapped
+3. Checkboxes submit even if not checked (hidden input hack)
+4. Language file support for label and option text
+5. Nest tags within tags
+6. Automatic ID creation for labels and fields
+7. Chaining of methods to quickly do what you need and force it to behave a certain way
+8. Add select options manually and from arrays, great for making a 'Please select' option
+
+
 
 Examples
 --------
 
 ```
 
-Forma::open()->class('glenn')->class('bob')->attr('id','sweet');
+Forma::open('user','GET')->class('glenn')->class('bob')->attr('id','sweet');
+
+Forma::open_secure('article')->files();
 
 Forma::text('first_name','glenn<$@£$T£!^;')->class('form-control')->attr('id','first_name');
 
@@ -60,7 +75,6 @@ Forma::select('country')->options(array('1' => 'United Kingdom', '2' => 'France'
 Forma::select('town', array('1' => 'Chelmsford', '2' => 'Brentwood', '3' => 'Colchester' ), 2);
 
 Forma::checkbox('cake',1);
-
 
 Forma::close();
 

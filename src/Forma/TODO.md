@@ -1,17 +1,11 @@
-Remaining todo...
+Remaining ToDo...
 ------------------------
 
-Form method, action (laravel stylie)
-Radio group
-Checkbox group?
-Button / submit
-
-auto-population from array or object, static property?
-
-Twig Extension to remove need for raw filter
-
-Client-side validation in HTML5
-
-Write some tests?
-
-Convert to Packagist thing?
+- Default value if no Input
+- Radio group
+- Checkbox group?
+- Button / submit
+- Auto-population from array or object
+- Twig Extension to remove need for raw filter
+- Client-side validation in HTML5
+- Write some tests

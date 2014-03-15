@@ -11,12 +11,31 @@ class Forma
 
     public function __call($name, $arguments)
     {
+        $options = array();
+
+        if (strpos($name,"_"))
+        {
+            // We have extras!
+            $options = explode('_',$name);
+            $name = array_shift($options);
+        }
+
         $field_type = "Forma\\Tags\\".$name;
 
         if (class_exists($field_type))
         {
+
+
             $r = new \ReflectionClass($field_type);
-            return $r->newInstanceArgs($arguments);
+            $tag = $r->newInstanceArgs($arguments);
+
+            foreach ($options as $o)
+            {
+                // call option
+                $tag->{$o}();
+            }
+
+            return $tag;
         }
 
         // Throw exception
