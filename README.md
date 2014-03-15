@@ -22,6 +22,8 @@ Examples
 
 ```
 
+Forma::populate($user);
+
 Forma::open('user','GET')->class('glenn')->class('bob')->attr('id','sweet');
 
 Forma::open_secure('article')->files();
