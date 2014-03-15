@@ -32,7 +32,7 @@ Forma::text('first_name','glenn<$@£$T£!^;')->class('form-control')->attr('id',
 
 Forma::text('last_name')->id('inputLast')->forceEmpty();
 
-Forma::email('email')->id('inputEmail');
+Forma::email('email')->id('inputEmail')->required();
 
 Forma::password('password')->id('inputPassword')->allowValue();
 

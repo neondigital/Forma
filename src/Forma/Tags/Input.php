@@ -3,12 +3,14 @@
 use Forma\Traits\WithLabel;
 use Forma\Traits\WrapLabel;
 use Forma\Traits\Placeholder;
+use Forma\Traits\Required;
 
 class Input extends BaseTag
 {
     use WithLabel;
     use WrapLabel;
     use Placeholder;
+    use Required;
 
     protected $tagName = 'input';
     protected $hasValue = true;
@@ -36,4 +38,5 @@ class Input extends BaseTag
         $this->attributes['type'] = $type;
         return $this;
     }
+
 }

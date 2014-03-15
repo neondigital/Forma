@@ -1,7 +1,11 @@
 <?php namespace Forma\Tags;
 
+use Forma\Traits\Required;
+
 class Textarea extends BaseTag
 {
+    use Required;
+
     protected $tagName = 'textarea';
     protected $hasValue = false;
 
