@@ -45,6 +45,11 @@ class BaseTag implements TagInterface
                 $this->attributes['value'] = Input::old($this->attributes['name']);
             }
 
+            // Try populated values
+            if (\Forma::hasValue($this->attributes['name']))
+            {
+                $this->attributes['value'] = \Forma::getValue($this->attributes['name']);
+            }
         }
 
         // Attributes

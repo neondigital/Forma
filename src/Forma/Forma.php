@@ -3,11 +3,7 @@
 class Forma
 {
 
-/**
- * Forma::text()->default()->class()->id()
- *
- * auto ID's e.g. id="inputTelephone"
- */
+    public static $populate_values = array();
 
     public function __call($name, $arguments)
     {
@@ -42,6 +38,28 @@ class Forma
         throw new \Exception('Tag type not found: '.$field_type);
 
         return '';
+    }
+
+    public function populate($data)
+    {
+
+        // Do we have an object?
+        if (is_object($data))
+        {
+            $data = get_object_vars($data);            
+        }
+
+        static::$populate_values = $data;
+    }
+
+    public function hasValue($field)
+    {
+        return isset(static::$populate_values[$field]);
+    }
+
+    public function getValue($field)
+    {
+        return static::$populate_values[$field];
     }
 
 }

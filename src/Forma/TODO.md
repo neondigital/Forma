@@ -1,7 +1,6 @@
 Remaining ToDo...
 ------------------------
 
-- Auto-population from array or object
 - Radio group
 - Checkbox group?
 - Twig Extension to remove need for raw filter
