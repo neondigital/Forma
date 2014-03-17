@@ -1,6 +1,6 @@
 {
     "name": "neondigital/forma",
-    "description": "A nice way to play with forms in Laravel 4.",
+    "description": "A nice way to play with forms in Laravel 4 and indeed any PHP project.",
     "keywords": ["laravel", "forms", "html", "builder"],
     "license": "MIT",
     "authors": [
