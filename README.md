@@ -66,7 +66,7 @@ Forma::checkbox('confirm')->id('inputConfirm')->wrap('Option One',array('class'=
 
 Forma::hidden('secret','thing');
 
-Forma::token();
+Forma::token();   // Laravel only
 
 Forma::textarea('secret','thi>ng<dd')->rows(10);
 
