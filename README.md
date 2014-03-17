@@ -1,7 +1,15 @@
 Forma
 =====
 
-A nice way to play with forms in Laravel 4.
+A nice way to play with forms in Laravel 4 and PHP. Does not require Laravel to be used.
+
+For non-Laravel usage use the following format for calls.
+
+```
+$forma = new Forma();
+echo $forma->email('email')->id('inputEmail')->required();
+```
+
 
 Clever Features
 ---------------
