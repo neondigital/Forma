@@ -12,13 +12,13 @@ class Checkbox extends Input
         $this->attributes['type'] = 'checkbox';
 
         // Try this request first
-        if (\Input::get($this->attributes['name']) == $value)
+        if (\Forma\Helpers::input($this->attributes['name']) == $value)
         {
             $this->checked();
         }
 
         // Old input
-        if (\Input::old($this->attributes['name']) == $value)
+        if (\Forma\Helpers::inputOld($this->attributes['name']) == $value)
         {
             $this->checked();
         }

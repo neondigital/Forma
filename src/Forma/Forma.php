@@ -53,12 +53,12 @@ class Forma
         static::$populate_values = $data;
     }
 
-    public function hasValue($field)
+    public static function hasValue($field)
     {
         return isset(static::$populate_values[$field]);
     }
 
-    public function getValue($field)
+    public static function getValue($field)
     {
         return static::$populate_values[$field];
     }

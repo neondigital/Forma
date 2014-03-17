@@ -46,9 +46,9 @@ class BaseTag implements TagInterface
             }
 
             // Try populated values
-            if (\Forma::hasValue($this->attributes['name']))
+            if (\Forma\Forma::hasValue($this->attributes['name']))
             {
-                $this->attributes['value'] = \Forma::getValue($this->attributes['name']);
+                $this->attributes['value'] = \Forma\Forma::getValue($this->attributes['name']);
             }
         }
 
