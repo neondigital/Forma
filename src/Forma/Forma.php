@@ -16,12 +16,13 @@ class Forma
             $name = array_shift($options);
         }
 
+        // So we can call lowercase classes in normal PHP
+        $name = ucfirst($name);
+
         $field_type = "Forma\\Tags\\".$name;
 
         if (class_exists($field_type))
         {
-
-
             $r = new \ReflectionClass($field_type);
             $tag = $r->newInstanceArgs($arguments);
 
