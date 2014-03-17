@@ -6,7 +6,7 @@ trait Placeholder
 {
     public function placeholder($text)
     {
-        $this->attributes['placeholder'] = Lang::has($text) ? Lang::get($text) : $text;
+        $this->attributes['placeholder'] = \Forma\Helpers::hasLang($text) ? \Forma\Helpers::lang($text) : $text;
         return $this;
     }
 }

@@ -16,7 +16,7 @@ class Open extends BaseTag
 
     public function action($action, $secure = true)
     {
-        $this->attributes['action'] = \URL::to($action, array(), $secure);
+        $this->attributes['action'] = \Forma\Helpers::url($action, array(), $secure);
         return $this;
     }
 

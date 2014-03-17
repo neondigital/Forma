@@ -23,15 +23,15 @@ class Select extends BaseTag
         if (!$this->selected)
         {
             // Try this request first
-            if (\Input::get($this->attributes['name']))
+            if (\Forma\Helpers::input($this->attributes['name']))
             {
-                $this->selected = \Input::get($this->attributes['name']);
+                $this->selected = \Forma\Helpers::input($this->attributes['name']);
             }
 
             // Old input
-            if (\Input::old($this->attributes['name']))
+            if (\Forma\Helpers::inputOld($this->attributes['name']))
             {
-                $this->selected = \Input::old($this->attributes['name']);
+                $this->selected = \Forma\Helpers::inputOld($this->attributes['name']);
             }
         }
 
@@ -51,7 +51,7 @@ class Select extends BaseTag
 
     public function option($text, $value=null, $selected=false)
     {
-        $this->child(\Forma::option($text, $value, $selected));
+        $this->child(new Option($text, $value, $selected));
         return $this;
     }
 

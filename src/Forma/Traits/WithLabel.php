@@ -1,5 +1,7 @@
 <?php namespace Forma\Traits;
 
+use Forma\Tags\Label;
+
 trait WithLabel
 {
     protected $withLabel;
@@ -14,7 +16,7 @@ trait WithLabel
                 $this->attributes['id'] = 'input' . ucfirst($this->attributes['name']);
             }
 
-            $label = \Forma::label($this->withLabel);
+            $label = new Label($this->withLabel);
 
             if (isset($this->attributes['id']))
                 $label->for($this->attributes['id']);

@@ -9,7 +9,7 @@ class Label extends BaseTag
 
     function __construct($text=null)
     {
-        $this->text = Lang::has($text) ? Lang::get($text) : $text; 
+        $this->text = \Forma\Helpers::hasLang($text) ? \Forma\Helpers::lang($text) : $text; 
     }
 
     /**

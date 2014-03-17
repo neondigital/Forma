@@ -14,7 +14,7 @@ class Option extends BaseTag
         if ($selected)
             $this->attributes['selected'] = null;
 
-        $this->text = Lang::has($text) ? Lang::get($text) : $text; 
+        $this->text = \Forma\Helpers::hasLang($text) ? \Forma\Helpers::lang($text) : $text; 
     }
 
 }

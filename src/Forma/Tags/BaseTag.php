@@ -34,15 +34,15 @@ class BaseTag implements TagInterface
         if ($this->hasValue and isset($this->attributes['name']))
         {
             // Try this request first
-            if (Input::get($this->attributes['name']))
+            if (\Forma\Helpers::input($this->attributes['name']))
             {
-                $this->attributes['value'] = Input::get($this->attributes['name']);
+                $this->attributes['value'] = \Forma\Helpers::input($this->attributes['name']);
             }
 
             // Old input
-            if (Input::old($this->attributes['name']))
+            if (\Forma\Helpers::inputOld($this->attributes['name']))
             {
-                $this->attributes['value'] = Input::old($this->attributes['name']);
+                $this->attributes['value'] = \Forma\Helpers::inputOld($this->attributes['name']);
             }
 
             // Try populated values

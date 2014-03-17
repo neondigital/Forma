@@ -43,7 +43,7 @@ class Checkbox extends Input
     {
         if ($this->hidden_field and isset($this->attributes['name']) and isset($this->attributes['value']))
         {
-            return \Forma::hidden($this->attributes['name'],'0');
+            return new Hidden($this->attributes['name'],'0');
         }
 
         return "";

@@ -1,5 +1,7 @@
 <?php namespace Forma\Traits;
 
+use Forma\Tags\Label;
+
 trait WrapLabel
 {
     protected $labelWrap;
@@ -9,7 +11,8 @@ trait WrapLabel
     {
         if ($this->labelWrap)
         {   
-            return (string) \Forma::label()->attribs($this->labelWrapAttributes);
+            $label = new Label();
+            return (string) $label->attribs($this->labelWrapAttributes);
         }
 
         return "";
