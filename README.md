@@ -5,6 +5,8 @@ IN DEVELOPMENT - But feel free to have a play!
 
 A nice way to play with forms in both Laravel 4 and PHP. Does not require Laravel to be used.
 
+Requires PHP 5.4+
+
 For non-Laravel usage use the following format for calls.
 
 ```
