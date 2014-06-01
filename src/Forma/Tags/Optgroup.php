@@ -7,13 +7,13 @@ class Optgroup extends BaseTag
     protected $tagName = 'optgroup';
     protected $selected;
     
-    function __construct($text=null,$options=null,$selected=false)
+    function __construct($label=null,$options=null,$selected=false)
     {
-        if ($selected)
-            $this->attributes['selected'] = null;
+        if ($label)
+            $this->attributes['label'] = $label;
+  
+        $this->selected = $selected;
 
-        $this->text = \Forma\Helpers::hasLang($text) ? \Forma\Helpers::lang($text) : $text; 
-    
         $this->options($options);
     }
 
