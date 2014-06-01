@@ -51,7 +51,15 @@ class Select extends BaseTag
 
     public function option($text, $value=null, $selected=false)
     {
-        $this->child(new Option($text, $value, $selected));
+        if (is_array($text))
+        {
+            $this->child(new Optgroup($value, $text, $this->selected));
+        }
+        else
+        {
+            $this->child(new Option($text, $value, $selected));
+        }
+
         return $this;
     }
 
