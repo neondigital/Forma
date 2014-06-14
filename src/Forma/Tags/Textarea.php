@@ -1,10 +1,14 @@
 <?php namespace Forma\Tags;
 
+use Forma\Traits\WithLabel;
+use Forma\Traits\Placeholder;
 use Forma\Traits\Required;
 
 class Textarea extends BaseTag
 {
     use Required;
+    use Placeholder;
+    use WithLabel;
 
     protected $tagName = 'textarea';
     protected $hasValue = false;
@@ -13,6 +17,9 @@ class Textarea extends BaseTag
     {
         $this->attributes['name'] = $name;
         $this->text = $text ? $text : ''; 
+
+        // Add pre-renders for traits
+        $this->preRenders[] = 'preRenderWithLabel';
     }
 
     public function rows($rows)

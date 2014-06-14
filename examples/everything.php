@@ -49,6 +49,8 @@ echo htmlentities($forma->textarea('bio')) . "\n";
 
 echo htmlentities($forma->textarea('secret','thi>ng<dd')->rows(10)) . "\n";
 
+echo htmlentities($forma->textarea('secret','thi>ng<dd')->rows(10)->placeholder('Enter stuff')->withLabel('Stuff')) . "\n";
+
 echo htmlentities($forma->radio('choice')->id('inputChoice')->wrap('Option One',array('class'=>'radio'))) . "\n";
 
 echo htmlentities($forma->file('image')->id('inputFile')->wrap('Select Image')) . "\n";
