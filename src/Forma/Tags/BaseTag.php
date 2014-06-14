@@ -73,7 +73,7 @@ class BaseTag implements TagInterface
             // Create end tag
             $tagString .= "</".$this->tagName.">";
         }
-        elseif ($this->text)
+        elseif (isset($this->text))
         {
             $tagString .= $this->rawText ? $this->text : $this->encode($this->text);
 
