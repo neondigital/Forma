@@ -12,7 +12,7 @@ class Textarea extends BaseTag
     function __construct($name=null, $text=null)
     {
         $this->attributes['name'] = $name;
-        $this->text = $text; 
+        $this->text = $text ? $text : ''; 
     }
 
     public function rows($rows)
