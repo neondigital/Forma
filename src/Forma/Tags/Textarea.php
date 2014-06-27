@@ -16,6 +16,22 @@ class Textarea extends BaseTag
     function __construct($name=null, $text=null)
     {
         $this->attributes['name'] = $name;
+
+        if (!$text)
+        {
+            // Try this request first
+            if (\Forma\Helpers::input($this->attributes['name']))
+            {
+                $text = \Forma\Helpers::input($this->attributes['name']);
+            }
+
+            // Old input
+            if (\Forma\Helpers::inputOld($this->attributes['name']))
+            {
+                $text = \Forma\Helpers::inputOld($this->attributes['name']);
+            }
+        }
+
         $this->text = $text ? $text : ''; 
 
         // Add pre-renders for traits
