@@ -85,6 +85,8 @@ echo htmlentities($forma->select('colours', $options, 3)) . "\n";
 
 echo htmlentities($forma->select('town', array('1' => 'Chelmsford', '2' => 'Brentwood', '3' => 'Colchester' ), 2)) . "\n";
 
+echo htmlentities($forma->select('town', array('1' => 'Chelmsford', '2' => 'Brentwood', '3' => 'Colchester' ),['2','3'],true)) . "\n";
+
 echo htmlentities($forma->checkbox('cake',1)) . "\n";
 
 echo htmlentities($forma->button('Click me!!', 'submit')->class('btn btn-primary')) . "\n";
