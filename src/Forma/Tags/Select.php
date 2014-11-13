@@ -11,9 +11,8 @@ class Select extends BaseTag
     protected $tagName = 'select';
     protected $selected;
 
-    function __construct($name=null, $options=null, $selected=null)
+    function __construct($name=null, $options=null, $selected=null, $multiple=true)
     {
-
         if ($name !== null)
             $this->attributes['name'] = $name;  
             
@@ -35,6 +34,10 @@ class Select extends BaseTag
             }
         }
 
+        if ($multiple)
+        {
+            $this->attr('multiple',true);
+        }
 
         if (is_array($options))
         {
@@ -67,7 +70,16 @@ class Select extends BaseTag
     {
         foreach ($options as $value => $text)
         {
-            $this->option($text, $value, $this->selected == $value);
+            if (is_array($this->selected))
+            {
+                $selected = in_array($value,$this->selected);
+            }
+            else
+            {
+                $selected = ($this->selected == $value);
+            }
+
+            $this->option($text, $value, $selected);
         }
         return $this;
     }
