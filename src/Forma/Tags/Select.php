@@ -11,7 +11,7 @@ class Select extends BaseTag
     protected $tagName = 'select';
     protected $selected;
 
-    function __construct($name=null, $options=null, $selected=null, $multiple=true)
+    function __construct($name=null, $options=null, $selected=null, $multiple=false)
     {
         if ($name !== null)
             $this->attributes['name'] = $name;  
