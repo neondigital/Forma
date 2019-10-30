@@ -37,7 +37,7 @@ class Helpers
     {
         if (static::isLaravel())
         {
-            return \Input::get($string);
+            return \Request::get($string);
         }
 
         return isset($_REQUEST[$string]) ? $_REQUEST[$string] : false;
@@ -47,7 +47,7 @@ class Helpers
     {
         if (static::isLaravel())
         {
-            return \Input::old($string);
+            return \Request::old($string);
         }
 
         return false;
