@@ -1,5 +1,9 @@
 <?php namespace Forma;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\URL;
+
 class Helpers
 {
 
@@ -7,17 +11,17 @@ class Helpers
     {
         if (static::isLaravel())
         {
-            return \URL::to($string);
+            return (new URL())->to($string);
         }
 
         return $string;
     }
 
-    public static function hasLang($string)
+    public static function hasLang($string): bool
     {
         if (static::isLaravel())
         {
-            return \Lang::has($string);
+            return (new Lang)->has($string);
         }
 
         return false;
@@ -27,7 +31,7 @@ class Helpers
     {
         if (static::isLaravel())
         {
-            return \Lang::get($string);
+            return (new Lang)->get($string);
         }
 
         return $string;
@@ -37,23 +41,23 @@ class Helpers
     {
         if (static::isLaravel())
         {
-            return \Request::get($string);
+            return (new Request)->get($string);
         }
 
-        return isset($_REQUEST[$string]) ? $_REQUEST[$string] : false;
+        return $_REQUEST[$string] ?? false;
     }
 
     public static function inputOld($string)
     {
         if (static::isLaravel())
         {
-            return \Request::old($string);
+            return (new Request)->old($string);
         }
 
         return false;
     }
 
-    public static function isLaravel()
+    public static function isLaravel(): bool
     {
         return class_exists('Illuminate\Foundation\Application');
     }
